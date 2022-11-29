@@ -2,6 +2,16 @@
   text-align: center;
 }
 
+.loader {
+  border: 16px solid #aae0f6;
+  border-top: 16px solid #0d4f8c;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
 
 button {
 
