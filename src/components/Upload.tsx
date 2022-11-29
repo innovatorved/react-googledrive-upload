@@ -1,7 +1,7 @@
 import React from "react";
 
-export default function Upload(props:any) {
-  const { token } = props;
+export default function Upload(props: any) {
+  const { token, setLoading } = props;
 
   const Uploadfile = async (e: React.ChangeEvent<HTMLInputElement>) => {
     if (token === "") {
@@ -25,7 +25,7 @@ export default function Upload(props:any) {
       new Blob([JSON.stringify(fileMetadata)], { type: "application/json" })
     );
     form.append("file", file);
-    
+    setLoading(true);
     fetch(
       "https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart",
       {
@@ -37,11 +37,11 @@ export default function Upload(props:any) {
       .then((res) => res.json())
       .then((res) => {
         console.log(res);
-        
+        setLoading(false)
         alert("Photo Uploaded to Drive")
       })
       .catch((err) => {
-        
+        setLoading(false)
         alert(err.message)
       });
   };

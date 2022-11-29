@@ -1,7 +1,8 @@
-import React, { useState , useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 
 import Upload from "./components/Upload";
+import Loader from "./components/Loader";
 
 function App() {
   const CLIENT_ID = "607050940310-4eqo5v4m14ul6n05ur982d7epbi66v35.apps.googleusercontent.com";
@@ -9,8 +10,9 @@ function App() {
   const REFRESH_TOKEN = "1//04KjQLhHOKEPQCgYIARAAGAQSNwF-L9IriqIyzOWY3xir-TIu810M7nJ-AhQ-gKTaDtZUbJfMVACShzZhN_XXD8zRhFKQxgR0OoA";
 
   const [token, setToken] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  useEffect(()=>{
+  useEffect(() => {
     fetch(
       "https://www.googleapis.com/oauth2/v4/token",
       {
@@ -23,19 +25,21 @@ function App() {
           "grant_type": "refresh_token"
         }),
       }
-    ).then(async(res:any)=>{
+    ).then(async (res: any) => {
       res = await res.json();
       setToken(res.access_token)
     })
-    .catch(err => alert(err.message));
+      .catch(err => alert(err.message));
     // eslint-disable-next-line
-  },[1])
+  }, [1])
 
 
   return (
     <div className="App">
       <header className="App-header">
-        <Upload token={token}/> 
+        {
+          loading === false ? <Upload token={token} setLoading={setLoading} /> : <Loader />
+        }
       </header>
     </div>
   );
