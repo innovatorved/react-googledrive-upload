@@ -5,7 +5,8 @@
 _.env_
 
 ```env
-# Add Your Access token and ClientId
-token=
-CLIENT_ID=
+# Add Your Access Refeshtoken , ClientId and ClientSecret
+CLIENT_ID= 
+CLIENT_SECRET= 
+REFRESH_TOKEN= 
 ```
