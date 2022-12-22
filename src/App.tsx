@@ -5,14 +5,9 @@ import Upload from "./components/Upload";
 import Loader from "./components/Loader";
 
 function App() {
-  const CLIENT_ID =
-    process.env.CLIENT_ID ||
-    "607050940310-4eqo5v4m14ul6n05ur982d7epbi66v35.apps.googleusercontent.com";
-  const CLIENT_SECRET =
-    process.env.CLIENT_SECRET || "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";
-  const REFRESH_TOKEN =
-    process.env.REFRESH_TOKEN ||
-    "1//04KjQLhHOKEPQCgYIARAAGAQSNwF-L9IriqIyzOWY3xir-TIu810M7nJ-AhQ-gKTaDtZUbJfMVACShzZhN_XXD8zRhFKQxgR0OoA";
+  const CLIENT_ID = process.env.CLIENT_ID;
+  const CLIENT_SECRET = process.env.CLIENT_SECRET;
+  const REFRESH_TOKEN = process.env.REFRESH_TOKEN;
 
   const [token, setToken] = useState("");
   const [loading, setLoading] = useState(false);
