@@ -37,17 +37,18 @@ export default function Upload(props: any) {
       .then((res) => res.json())
       .then((res) => {
         console.log(res);
-        setLoading(false)
-        alert("Photo Uploaded to Drive")
+        setLoading(false);
+        alert("Photo Uploaded to Drive");
       })
       .catch((err) => {
-        setLoading(false)
-        alert(err.message)
+        setLoading(false);
+        alert(err.message);
       });
   };
 
   return (
     <form>
+      <label htmlFor="avatar">Select File</label>
       <input
         type="file"
         id="avatar"

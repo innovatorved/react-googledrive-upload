@@ -1,5 +1,57 @@
-.App {
+.App-header {
+  background-color: #EDEDED;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+nav {
   text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  margin: 20px;
+  color: #3d3c42;
+}
+
+form {
+  margin: 0 auto;
+  padding: 20px;
+  width: 400px;
+  height: auto;
+  overflow: hidden;
+  background: #FFFFFF;
+  border-radius: 5px;
+}
+
+label {
+  margin: 0;
+  padding: 5px;
+  width: auto;
+  max-width: 200px;
+  height: auto;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: #3D3C42;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -webkit-transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -ms-transition: 0.2s ease all;
+  -o-transition: 0.2s ease all;
+  transition: 0.2s ease all;
+}
+
+label:hover {
+  background: #ADADAD;
+}
+
+[type=file] {
+  display: none;
 }
 
 @keyframes ldio-9u8gbddmqad {
@@ -178,45 +230,7 @@
   box-sizing: content-box;
 }
 
-button {
 
-  display: block;
-  outline: none;
-  cursor: pointer;
-  margin: 20px auto;
-  font-weight: 500;
-  border: 1px solid transparent;
-  border-radius: 2px;
-  height: 36px;
-  line-height: 34px;
-  font-size: 14px;
-  color: #241c15;
-  background-color: #efeeea;
-  transition: background-color 0.2s ease-in-out 0s, opacity 0.2s ease-in-out 0s;
-  padding: 0 18px;
-}
-
-button:hover {
-  color: #241c15;
-  background-color: #d9d7cd;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  margin-top: 15px;
-  color: #61dafb;
-  font-size: 20px;
-}
 
 @keyframes App-logo-spin {
   from {
